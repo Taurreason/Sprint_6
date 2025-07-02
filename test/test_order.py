@@ -7,7 +7,7 @@ from pages.popup_order_confirm_page import PopupOrderConfirmPage
 from pages.popup_order_placed_page import PopupOrderPlacedPage
 from pages.status_order_page import StatusOrderPage
 from locators import Buttons
-from data import test_user_data
+from data import test_user_data, UserData, RentData
 
 
 
@@ -17,13 +17,9 @@ class TestOrder:
 
     @allure.title("Проверка оформления заказа самоката")
     @allure.description("Проверяем, что данные пользователя и аренды заполняются корректно")
-    @pytest.mark.parametrize(
-        "name, surname, address, metro, phone_number, color_name, comment_courier",
-        test_user_data
-    )
+    @pytest.mark.parametrize("user, rent", test_user_data)
     def test_input_valid_order_data(
-        self, driver, name, surname, address, metro, phone_number, color_name, comment_courier
-    ):
+        self, driver, user: UserData, rent: RentData):
         main_page = Main(driver)
         user_form = OrderUserPage(driver)
         rent_form = OrderRentPage(driver)
@@ -38,10 +34,12 @@ class TestOrder:
             main_page.scroll_and_click_button(Buttons.ORDER_MAIN_UP)
 
         with allure.step("Заполняем форму пользователя"):
-            user_form.fill_order_form(name, surname, address, metro, phone_number)
+            user_form.fill_order_form(
+                user.name, user.surname, user.address, user.metro, user.phone
+            )
 
         with allure.step("Заполняем форму аренды"):
-            rent_form.fill_rent_order_form(color_name, comment_courier)
+            rent_form.fill_rent_order_form(rent.color, rent.comment)
 
         with allure.step("Подтверждаем заказ"):
             popup_confirm.confirm_order()
