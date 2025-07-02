@@ -1,8 +1,7 @@
 import allure
-from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
-from locators import Inputs, Dropdown, Buttons, Header, DynamicLocators
 from pages.base_page import BasePage
+from locators.order_user_locators import Inputs, Dropdown, Buttons, Header, DynamicLocators
 from data import ORDER_PAGE_URL
 
 class OrderUserPage(BasePage):

@@ -1,8 +1,8 @@
 import allure
 from datetime import datetime, timedelta
-from selenium.webdriver.common.by import By
+# from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
-from locators import Inputs, Dropdown, Buttons, Header, DynamicLocators
+from locators.order_rent_locators import Inputs, Dropdown, Buttons,  Header, DynamicLocators
 from data import colors_samokat, months
 from pages.base_page import BasePage
 

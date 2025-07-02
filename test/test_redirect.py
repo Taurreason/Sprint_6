@@ -2,11 +2,10 @@
 import allure
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
-
 from pages.main_page import Main
 from pages.order_user_page import OrderUserPage
 from pages.yandex_page import YandexPage
-from locators import Buttons
+from locators.main_locators import Buttons
 import time
 
 

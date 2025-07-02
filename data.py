@@ -1,4 +1,4 @@
-from locators import CheckBox
+from locators.order_rent_locators import CheckBox
 from dataclasses import dataclass
 
 # Базовый адрес
@@ -6,7 +6,7 @@ BASE_URL = 'https://qa-scooter.praktikum-services.ru/'
 
 # Пути (эндпоинты)
 YANDEX_URL = 'https://ya.ru/'
-ORDER_PAGE_PATH = '/order'
+ORDER_PAGE_PATH = 'order'
 ORDER_PAGE_URL = BASE_URL + ORDER_PAGE_PATH
 
 expected_faq_texts = {

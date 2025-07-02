@@ -1,8 +1,8 @@
 import allure
-from locators import *
 from pages.base_page import BasePage
 from selenium.webdriver.support import expected_conditions as EC
-from data import BASE_URL 
+from data import BASE_URL
+from locators.main_locators import Buttons
 
 
 class Main(BasePage):

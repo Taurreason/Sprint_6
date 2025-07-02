@@ -6,7 +6,7 @@ from pages.order_rent_page import OrderRentPage
 from pages.popup_order_confirm_page import PopupOrderConfirmPage
 from pages.popup_order_placed_page import PopupOrderPlacedPage
 from pages.status_order_page import StatusOrderPage
-from locators import Buttons
+from locators.main_locators import Buttons as MainButtons
 from data import test_user_data, UserData, RentData
 
 
@@ -31,7 +31,7 @@ class TestOrder:
             main_page.open_main_page_and_accept_cookies()
 
         with allure.step("Прокручиваем до кнопки 'Заказать' и кликаем"):
-            main_page.scroll_and_click_button(Buttons.ORDER_MAIN_UP)
+            main_page.scroll_and_click_button(MainButtons.ORDER_MAIN_UP)
 
         with allure.step("Заполняем форму пользователя"):
             user_form.fill_order_form(

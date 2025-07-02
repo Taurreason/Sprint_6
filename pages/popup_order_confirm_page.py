@@ -1,6 +1,6 @@
 import allure
 from selenium.webdriver.support import expected_conditions as EC
-from locators import Header, Buttons
+from locators.popup_order_confirm_locators import PopupOrderConfirmHeader, PopupOrderConfirmButtons
 from pages.base_page import BasePage
 
 
@@ -10,5 +10,5 @@ class PopupOrderConfirmPage(BasePage):
 
     @allure.step("Подтверждаем оформление заказа")
     def confirm_order(self):
-        self.wait.until(EC.visibility_of_element_located(Header.CONFIRM_ORDER))
-        self.click(Buttons.POPUP_PLACE_ORDER_YES)
+        self.wait.until(EC.visibility_of_element_located(PopupOrderConfirmHeader.CONFIRM_ORDER))
+        self.click(PopupOrderConfirmButtons.POPUP_PLACE_ORDER_YES)
