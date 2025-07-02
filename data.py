@@ -1,8 +1,13 @@
 from locators import CheckBox
 
+
+# Базовый адрес
 BASE_URL = 'https://qa-scooter.praktikum-services.ru/'
+
+# Пути (эндпоинты)
 YANDEX_URL = 'https://ya.ru/'
-ORDER_PAGE_URL = "https://qa-scooter.praktikum-services.ru/order"
+ORDER_PAGE_PATH = '/order'
+ORDER_PAGE_URL = BASE_URL + ORDER_PAGE_PATH
 
 expected_faq_texts = {
 0: "Сутки — 400 рублей. Оплата курьеру — наличными или картой.",
