@@ -23,5 +23,5 @@ class FaqPage(BasePage):
         # Ожидание, что элемент видим
         element = self.wait.until(EC.visibility_of_element_located(locator))
         # Прокрутка к элементу
-        self.driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", element)
+        self.scroll_into_view(element)
         self.wait.until(EC.element_to_be_clickable(locator)).click()

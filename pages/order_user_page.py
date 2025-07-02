@@ -18,7 +18,7 @@ class OrderUserPage(BasePage):
         self.click(Dropdown.METRO_INPUT)
         option_locator = DynamicLocators.metro_option_by_name(metro_station)
         option = self.wait.until(EC.presence_of_element_located(option_locator))
-        self.driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", option)
+        self.scroll_into_view(option)
         self.wait.until(EC.element_to_be_clickable(option_locator)).click()
 
         self.enter_text(Inputs.PHONE_NUMBER, phone)

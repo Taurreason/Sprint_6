@@ -50,3 +50,6 @@ class BasePage:
     def get_current_url(self):
         return self.driver.current_url
     
+    @allure.step("Скроллим до элемента через JS")
+    def scroll_into_view(self, element):
+        self.driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", element)
